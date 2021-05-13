@@ -1,0 +1,59 @@
+.x{
+    height: 30px;
+}
+
+.c{
+    width: 90%;
+    margin: 0 auto;
+    height: 600px;
+    overflow: auto;
+    border-top: 1px solid rgb(202, 214, 206);
+    border-right: 1px solid rgb(202, 214, 206);
+    border-left: 1px solid rgb(202, 214, 206);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.head{
+    margin-left: 5px;
+    color: white;
+    font-size: large;
+}
+
+#first{
+    background-color: rgb(202, 214, 206);
+}
+
+.item{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 30% 50% 20%;
+    background-color: rgb(232, 241, 236);
+    border: white 2px solid;
+    height: 50px;
+}
+
+.foot{
+    width: 72%;
+    height: 30px;
+    margin-left: 5%;
+    background-color: rgb(202, 214, 206);
+    float: left;
+}
+
+.submit{
+    width: 18%;
+    height: 30px;
+    float: right;
+    background-color: rgb(148, 184, 159) ;
+    border: none;
+    margin-right: 5%;
+}
+
+.name{
+    margin-left: 5px;
+    padding-top: 10px;
+}
+.email{
+    margin-left: 5px;
+    padding-top: 10px;
+}

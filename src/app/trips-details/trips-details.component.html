@@ -1,0 +1,50 @@
+<div class="tripContainer">
+    
+    <div class="tripHeader">
+
+        <div class="info">
+            <p class="tripName">{{trip.name | uppercase}}</p>
+
+            <img class="image" [src]="trip.image" />
+
+            <ngb-rating [max]="5" [(ngModel)]="stars" [(rate)]="stars" [readonly]="!authService.isBought(id) || authService.isRated(id)" class="stars" (click)="rate()"></ngb-rating>
+
+            <p class="tripCountry">Destination: {{trip.country | uppercase}}</p>
+            <p class="tripDates">Start date: {{trip.start}}</p>
+            <p class="tripDates">End date: {{trip.end}}</p>
+            <p class="tripPrice">Price: {{trip.price | currency}}</p>
+        </div>
+
+        <div id="tripReservation">
+            <p class="places">Places: {{trip.reserved}} / {{trip.places}}</p>
+            <div class="buttons">
+                <button class="del" type="button" [style.display]="authService.isReserved(trip.key) ? 'inline' : 'none'" (click)="removeReservation(getIndex(trip))">-</button>
+                <button class="add" type="button" [style.display]="trip.reserved == trip.places ? 'none' : 'inline'" (click)="addReservation(getIndex(trip))">+</button>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="tripDesc">
+        <p class="descTitle">DESCRIPTION:</p>
+
+        <p class="desc">{{trip.description}}</p>
+
+        <div class="icons">
+            <img class="icon" src = 'https://www.seekpng.com/png/full/201-2018208_clipart-restaurant-icon-restaurant-symbol-white-png.png' />
+            <img class="icon" src = "https://www.freeiconspng.com/uploads/description-white-plane-icon-2-27.png" />
+            <img class="icon" src = "https://www.materialui.co/materialIcons/maps/local_hotel_white_192x192.png" />
+            <img class="icon" src = "https://aderstennorlin.com/wp-content/uploads/2017/04/MAPPI.png" />
+        </div>
+    </div>
+
+
+
+</div>
+
+
+
+
+
+
+

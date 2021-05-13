@@ -1,0 +1,52 @@
+<div class="bar">
+    <h2>FILTER</h2>
+    <button class="active" *ngIf="!active" (click)="changeActive()">+</button>
+    <button class="active" *ngIf="active" (click)="changeActive()">-</button>
+</div>
+
+<div *ngIf="active" class= "container">
+    <div class="destination">
+        <h5>Destination</h5>
+        <div *ngFor="let trip of List, index as i"> 
+            <input type="checkbox" (change)="onDestinationChange(i)">
+            <label>{{trip.country}}</label>
+        </div>
+    </div>
+
+    <div class="dates">
+        <h5>Dates</h5>
+        <div>
+            <label>Start date</label><br>
+            <input type="date" [ngModel]="selectedStart | date:'yyyy-MM-dd'" (ngModelChange)="selectedStart = $event" type="date" name="selectedStart" (change)="onDateChange()"><br>
+            <label>End date</label><br>
+            <input type="date" [ngModel]="selectedEnd | date:'yyyy-MM-dd'" (ngModelChange)="selectedEnd = $event" type="date" name="selectedEnd" (change)="onDateChange()"><br>
+        </div>
+    </div>
+
+    <div class="rating">
+        <h5>Rating</h5>
+        <button [style.background-color] = "conditions.Rating[0] ? 'gold' : 'lightgrey' " (click)="onRatingChange(0)" >0</button>
+        <button [style.background-color] = "conditions.Rating[1] ? 'gold' : 'lightgrey' " (click)="onRatingChange(1)" >1</button>
+        <button [style.background-color] = "conditions.Rating[2] ? 'gold' : 'lightgrey' " (click)="onRatingChange(2)" >2</button>
+        <button [style.background-color] = "conditions.Rating[3] ? 'gold' : 'lightgrey' " (click)="onRatingChange(3)" >3</button>
+        <button [style.background-color] = "conditions.Rating[4] ? 'gold' : 'lightgrey' " (click)="onRatingChange(4)" >4</button>
+        <button [style.background-color] = "conditions.Rating[5] ? 'gold' : 'lightgrey' " (click)="onRatingChange(5)" >5</button>
+
+    </div>
+
+    <div class="price">
+        <h5>Price</h5>
+        <div>
+            <label>Minimum price</label><br>
+            <input [disabled]="minPrice() == maxPrice()" type="range" [min] = "minPrice()" [max]="maxPrice()" [ngModel]="selectedMin" (ngModelChange)="selectedMin = $event" name="selectedMin" (change)="onPriceChange()">
+            {{selectedMin}} <br>
+            <label>Maximum price</label><br>
+            <input [disabled]="minPrice() == maxPrice()" type="range" [min] = "selectedMin" [max]="maxPrice()" [ngModel]="selectedMax" (ngModelChange)="selectedMax = $event" name="selectedMax" (change)="onPriceChange()">
+            {{selectedMax}} <br>
+        </div>
+    </div>
+
+</div>
+
+
+

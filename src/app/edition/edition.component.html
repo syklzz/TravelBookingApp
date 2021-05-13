@@ -1,0 +1,39 @@
+<div class="card">
+    <h2 class="card-title">EDIT</h2>
+    <form novalidate [formGroup] = "myForm" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+              <label>Name</label>
+              <input [(ngModel)]="trip.name" type="text" class="form-control" formControlName="name" >
+            </div>
+            <div class="form-group ">
+              <label>Destination</label>
+              <input [(ngModel)]="trip.country" type="text" class="form-control" formControlName="country" >
+            </div>
+            <div class="form-group ">
+              <label>Start date</label>
+              <input [(ngModel)]="trip.start" type="date" class="form-control" formControlName="start">
+            </div>
+            <div class="form-group ">
+              <label>End date</label>
+              <input [(ngModel)]="trip.end" type="date" class="form-control" formControlName="end">
+            </div>
+            <div class="form-group ">
+              <label>Price</label>
+              <input [(ngModel)]="trip.price" type="text" class="form-control" formControlName="price" [placeholder]="trip.price">
+            </div>
+            <div class="form-group">
+              <label>Places</label>
+              <input [(ngModel)]="trip.places" type="text" class="form-control" formControlName="places" [placeholder]="trip.places">
+            </div>
+            <div class="form-group">
+                <label>Description</label>
+                <input [(ngModel)]="trip.description" type="text" class="form-control" formControlName="description" [placeholder]="trip.description">
+            </div>
+            <div class="form-group">
+                <label>Image URL</label>
+                <input [(ngModel)]="trip.image" type="text" class="form-control" formControlName="image" [placeholder]="trip.image">
+            </div>
+
+            <button type="submit" class="btn btn-primary" [disabled]="!myForm.valid || (trip.reserved > trip.places)" id="sub">Save</button>
+    </form>
+</div>

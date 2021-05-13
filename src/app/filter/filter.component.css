@@ -1,0 +1,74 @@
+.bar{
+    position: relative;
+    height: 40px;
+    background-color: rgb(202, 214, 206);
+}
+
+h2{
+    float: left;
+    height: 50px;
+    margin-left: 5px;
+    margin-top: 10px;
+    font-size: large;
+
+}
+
+.active{
+    float: right;
+    clip-path: none;
+    background: none;
+    font-size: 20px;
+}
+
+
+h5{
+    font-size: 18px;
+}
+
+.container{
+    width: 100%;
+    height: auto;
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 20px;
+    align-items: center;
+}
+
+.destination{
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 4;
+}
+
+.rating{
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    font-size: 12px;
+}
+
+.dates{
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+
+.price{
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 3;
+    grid-row-end: 4;
+}
+
+button{
+    width: 35px;
+    height: 35px;
+    margin-right: 5px;
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    border: none;
+    outline: none;
+    z-index: 0;
+}

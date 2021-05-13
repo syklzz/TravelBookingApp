@@ -1,0 +1,13 @@
+
+<nav class= "nav-bar">
+    <div class="user" *ngIf="authService.isLoggedIn()"> <p>{{authService.userDetails.name | uppercase}}</p></div>
+    <button routerLink="trips">Trips</button>
+    <button *ngIf="authService.userDetails.role == 'admin' " routerLink="settings">Settings</button>
+    <button *ngIf="authService.isLoggedIn()" routerLink="basket">Basket</button>
+    <button *ngIf="!authService.isLoggedIn()" routerLink="login">Log in</button>
+    <button *ngIf="!authService.isLoggedIn()" routerLink="register">Sign in</button>
+    <button *ngIf="authService.isLoggedIn()" (click)="logout()" routerLink="login">Log out</button>
+</nav>
+
+
+<router-outlet></router-outlet>

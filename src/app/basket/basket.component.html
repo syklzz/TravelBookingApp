@@ -1,0 +1,45 @@
+<div class="c" *ngIf="!show">
+    <div class="header">
+        <h2>BASKET</h2>
+        <button (click)="showHistory()" class="history"></button>
+    </div>
+
+    <div *ngFor = "let item of tripsBooked, index as i">
+        <div class="Wrapper"> 
+            <img class="image" [src]="getTrip(item.key).image" />
+
+            <p class="item">x{{item.number}}</p>
+            <p class="item">{{item.price | currency}}</p>
+            <p class="item">{{item.country}}</p>
+        </div>
+    </div>
+    
+</div>
+<div *ngIf="!show" class="purchase">
+    <div *ngIf="totalSum()>0" class="sum">Total sum: {{totalSum() | currency}}</div>
+    <button *ngIf="totalSum()>0" (click)="buy()" class="buy">BUY</button>
+</div>
+
+
+<div class="c" *ngIf="show">
+    <div class="header">
+        <h2>HISTORY</h2>
+        <button (click)="showHistory()" class="basket"></button>
+    </div>
+
+    <div *ngFor = "let item of authService.userDetails.bought, index as i">
+        <div class="Wrapper2"> 
+            <img class="image" [src]="getTrip(item.key).image" />
+
+            <p class="item">x{{item.number}}</p>
+            <p class="item">{{item.country}}</p>
+            <p class="item">{{item.date.toDate() | date:'yyyy/MM/dd h:mm:ss a'}}</p>
+            
+        </div>
+    </div>
+</div>
+<div *ngIf="show" class="footer">
+    
+</div>
+
+

@@ -1,0 +1,92 @@
+.header{
+    display: grid;
+    grid-template-columns: auto 30px;
+    align-items: center;
+    background-color:  rgb(202, 214, 206);
+}
+
+
+h2{
+    margin-top: 10px;
+    padding: 5px;
+    background-color:  rgb(202, 214, 206);
+    font-size: large;
+}
+
+
+.c{
+    height: 660px;
+    width: 100%;
+    overflow: auto;
+}
+
+.Wrapper{
+    margin: 0 auto;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 80px 50px 120px auto;
+}
+
+.image{
+    margin-top: 10px;
+    width: 77px;
+}
+
+.item{
+    height: 80px;
+    margin-top: 10px;
+    border-top: 1px solid rgb(210, 218, 210);
+    border-bottom: 1px solid rgb(210, 218, 210);
+    background-color:  rgb(240, 245, 242);
+    font-size: 18px;
+    padding-top: 25px;
+}
+
+.purchase{
+    background-color:  rgb(202, 214, 206);
+    display: grid;
+    grid-template-columns: 90% 10%;
+}
+
+.sum{
+    padding: 5px;
+    width: 100%;
+    background-color:  rgb(202, 214, 206);
+}
+
+.buy{
+    border: none;
+    outline: none;
+}
+
+.history{
+    width: 25px;
+    height: 25px;
+    background: url(files/history.png);
+    border: none;
+    outline: none;
+    float: right;
+}
+
+.basket{
+    width: 25px;
+    height: 25px;
+    background: url(files/basket.png);
+    border: none;
+    outline: none;
+    float: right;
+}
+
+.footer{
+    width: 100%;
+    height: 35px;
+    background-color: rgb(202, 214, 206);
+}
+
+
+.Wrapper2{
+    margin: 0 auto;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 80px 50px 120px auto;
+}

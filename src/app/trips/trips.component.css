@@ -1,0 +1,189 @@
+@media screen and (min-width:1000px){
+    div.tripContainer{grid-template-columns: 30% 30% 30%;}
+}
+
+@media screen and (max-width:650px){
+    div.tripContainer{grid-template-columns: 100%;}
+}
+
+.bar{
+    background-color: white;
+    width: 100%;
+    margin-top: 0;
+    display: grid;
+    grid-template-columns: 90% 10%;
+}
+
+h3{
+    width: 100%;
+    font-size: 20px;
+    background-color: rgb(165, 223, 204);
+}
+
+.edition{
+    float: left;
+    background: url(files/edit.png) ;
+}
+
+#pom{
+    display: none;
+}
+
+.tripContainer{
+    width: 90%;
+    height: auto;
+    margin: 0 auto;
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: 49% 49%;
+    grid-gap: 1%;
+    align-items: center;
+}
+
+.tripCard{
+    width: 100%;
+    height: auto;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.tripHeader{
+    width: 100%;
+    height: auto;
+    padding: 5%;
+    background-color: rgb(238, 237, 237);
+   
+}
+
+.tripInfo{
+    width: 100%;
+    height: auto;
+    padding: 5%;
+    display: flex;
+}
+
+.tripName{
+    margin: 0;
+}
+
+.tripDates{
+    margin: 0;
+    font-size: 11px;
+    color: grey;
+}
+
+.tripPrice{
+    margin: 0;
+    font-size: 14px;
+}
+
+.tripInfo img{
+    width: 35%;
+    height: auto;
+    clip-path: circle();
+
+}
+
+.tripInfo .info{
+    margin-left: 10%;
+    width: 50%;
+    
+}
+
+.tripInfo .btn-info{
+   font-size: 15px;
+   width: 100px;
+}
+
+.tripReservation{
+    width: 100%;
+    padding: 5%;
+    border-top: 1px solid rgb(226, 215, 215);
+    background-color:white;
+}
+
+button{
+    width: 25px;
+    height: 25px;
+    margin-left: 5px;
+    outline: none;
+    border: none;
+}
+
+.add{
+    opacity: 0.3;
+    background: url(files/add.png);
+}
+.del{
+    opacity: 0.3;
+    background: url(files/delete.png);
+}
+.rem{
+    background: url(files/bin.png);
+    float: right;
+}
+.edit{
+    background: url(files/edit.png);
+    float: right;
+}
+.add-trip{
+    width: 100%;
+}
+.addTrip{
+    opacity: 0.3;
+    width: 200px;
+    height: 200px;
+    background: url(files/add-trip.png);
+    margin: 0 auto;
+}
+
+
+
+.buttons{
+    float: right;
+}
+
+.tripWarnings{
+    width: 100%;
+    padding-left: 5%;
+    padding-right: 5%;
+    border-top: 1px solid rgb(226, 215, 215);
+    display: flex;
+    align-items: center;
+}
+
+.tripWarnings button{
+    margin-left: 5%;
+}
+
+.tripWarnings .warning0{
+    padding: 3%;
+    margin-top: 5%;
+    border-radius: 1ch;
+    width: 100%;
+    background-color: white;
+    color: white;
+}
+
+.tripWarnings .warning1{
+    padding: 3%;
+    margin-top: 5%;
+    border-radius: 1ch;
+    width: 100%;
+    background-color: rgb(233, 187, 187);
+}
+
+.tripWarnings .warning2{
+    padding: 3%;
+    margin-top: 5%;
+    border-radius: 1ch;
+    width: 100%;
+    background-color: rgb(238, 238, 202);
+}
+
+.stars{
+    outline: none;
+}
+
+.more{
+    color: grey;
+}

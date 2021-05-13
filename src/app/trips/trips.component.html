@@ -1,0 +1,48 @@
+
+<app-filter [currentList] = "tripList |  filter: stars : Conditions : pom : false: authService.userDetails.role : authService.isLoggedIn()" [List] = "tripList" [conditions] = "Conditions" (notify)="changeConditions($event)"></app-filter>
+
+<div class="bar">
+    <h3 [style.background-color] = "authService.getReserved() >= 10 ? 'rgb(169, 223, 169)' : 'rgb(201, 137, 137)'">Booked trips: {{authService.getReserved()}}</h3>
+    <button class="edition" *ngIf= "authService.userDetails.role === 'admin' || authService.userDetails.role === 'worker'" (click)="editionMode()"></button>
+</div>
+
+
+<div class="tripContainer">
+    <div *ngFor="let trip of tripList | filter: stars : Conditions : pom : true : authService.userDetails.role : authService.isLoggedIn()" class="tripCard"  [ngStyle] = "getBorder(getIndex(trip))">
+        
+        <div class="tripHeader">
+            {{trip.name | uppercase}}
+            <button *ngIf="edition && authService.userDetails.role === 'admin' " class="rem" type="button" (click)="removeTrip(trip)"></button>
+            <button *ngIf="edition" class="edit" type="button" [routerLink]="['/trips/edit', trip.key]"></button>
+        </div>
+
+        <div class="tripInfo">
+            <img [src] = "trip.image">
+            <div class="info">
+                <p class="tripName">{{trip.country | uppercase}}</p>
+                <ngb-rating [max]="5" [(rate)]="stars[getIndex(trip)]" [readonly]="true" class="stars"></ngb-rating>
+                <p class="tripDates">{{trip.start}} - {{trip.end}}</p>
+                <p class="tripPrice">{{trip.price | currency}}</p>
+                <a class="more" [routerLink]="['/trips/details', trip.key]">Read more</a>
+            </div>
+        </div>
+
+        <div class="tripReservation">
+            Places: {{trip.reserved}} / {{trip.places}}
+            <div *ngIf="authService.isLoggedIn()" class="buttons">
+                <button class="del" type="button" [style.display]="authService.isReserved(trip.key) ? 'inline' : 'none'" (click)="removeReservation(getIndex(trip))"></button>
+                <button class="add" type="button" [style.display]="trip.reserved == trip.places ? 'none' : 'inline'" (click)="addReservation(getIndex(trip))"></button>
+            </div>
+        </div>
+
+        <div class="tripWarnings">
+            <p *ngIf = "trip.places - 1 > trip.reserved" class="warning0">.</p>
+            <p *ngIf = "trip.reserved == trip.places" class="warning1">No available places!</p>
+            <p *ngIf = "trip.reserved == trip.places - 1" class="warning2">Last place!</p>
+        </div>
+    </div>
+
+    <button *ngIf="edition" class="addTrip" routerLink="add"></button>
+
+</div>
+

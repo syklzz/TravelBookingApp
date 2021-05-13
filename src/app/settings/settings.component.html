@@ -1,0 +1,25 @@
+<div class="x"></div>
+<div class="c">
+    <div class="item" id="first">
+        <p class="head">NAME</p>
+        <p class="head">EMAIL</p>
+        <p class="head">ROLE</p>
+    </div>
+
+    <div class="item" *ngFor="user of usersList, index as i">
+        <p class="name">{{usersList[i].name}}</p>
+        <p class="email">{{usersList[i].email}}</p>
+
+        <select class="role" [(ngModel)]="usersList[i].role">
+            <option>reader</option>
+            <option>vip</option>
+            <option>worker</option>
+            <option>admin</option>
+        </select>
+
+    </div>
+
+</div>
+
+<div class="foot"></div>
+<button class="submit" (click)="onSubmit()">save</button>
